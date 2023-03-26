@@ -1,3 +1,5 @@
+<?php include('path.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,41 +11,15 @@
 
     <script src="https://kit.fontawesome.com/d68a41201f.js" crossorigin="anonymous"></script>
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Expletus+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poiret+One&display=swap" rel="stylesheet">
     <title>Статья</title>
 </head>
 <body>
-    <header class="conteiner-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-4">
-                    <h1>
-                        <a href="/">My blog</a>
-                    </h1>
-                </div>
-                <nav class="col-8">
-                    <ul>
-                        <li><a href="#">Главная</a></li>
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">Услуги</a></li>
-                        <li>
-                            <a href="#">
-                                <i class="fa-solid fa-user"></i>
-                                Кабинет
-                            </a>
-                            <ul>
-                                <li><a href="#">Админ панель</a></li>
-                                <li><a href="#">Выход</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+
+<?php include("app/include/header.php"); ?>
 
 <!-- Блок MAIN START-->
 <div class="container">
@@ -54,7 +30,7 @@
 
       <div class="single_post row">
         <div class="img col-12">
-          <img src="img/mpage.jpeg" alt="" class="img-thumbnail">
+          <img src="assets/img/mpage.jpeg" alt="" class="img-thumbnail">
           <div class="info">
             <i class="far fa-user"> Имя Автора</i>
             <i class="far fa-calendar"> Март 24, 2023</i>
@@ -95,69 +71,7 @@
 </div>
 <!-- Блок MAIN END-->
 <!-- Блок FOOTER START-->
-<div class="footer container-fluid">
-  <div class="footer-content container">
-    <div class="row">
-        
-      <div class="footer-section about col-md-4 col-12">
-        <h3 class="logo-text">Мой блог</h3>
-        <p>
-          Мой блог создан с целью разделения приобретенных в програмированнии знаний
-        </p>
-        <div class="contact">
-          <!-- <span><i class="fas fa-phone"></i> &nbsp; +7988-677-04-04</span> -->
-          <span><i class="fas fa-envelope"></i> &nbsp; researchactor@gmail.com</span>
-        </div>
-        <div class="socials">
-          <!-- <a href="#"><i class="fab fa-facebook"></i></a> -->
-          <!-- <a href="#"><i class="fab fa-instagram"></i></a> -->
-          <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-
-        <div class="footer-section links col-md-4 col-12">
-          <h3>Быстрые ссылки</h3>
-          <br>
-          <ul>
-            <a href="#">
-              <li>События</li>
-            </a>
-            <a href="#">
-              <li>Команда</li>
-            </a>
-            <a href="#">
-              <li>Упражнения</li>
-            </a>
-            <a href="#">
-              <li>Галерея</li>
-            </a>
-            <a href="#">
-              <li>Что-то еще...</li>
-            </a>
-          </ul>
-        </div>
-
-        <div class="footer-section contact-form col-md-4 col-12">
-          <h3>Контакты</h3>
-          <br>
-          <form action="/" method="post">
-            <input type="email" name="email" class="text-input contact-input" placeholder="Введите email...">
-            <textarea name="message" rows="4" class="text-input contact-input" placeholder="Введите сообщение..."></textarea>
-            <button type="submit" class="btn btn-big contact-btn">
-              <i class="fas fa-envelope"></i>
-              Отправить
-            </button>
-          </form>
-        </div>
-      
-      <div class="footer-bottom">
-        &copy; myblog.com | Designed by Adam
-      </div>
-      
-    </div>
-  </div>
-</div>
+<?php include("app/include/footer.php"); ?>
 <!-- Блок FOOTER END-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
