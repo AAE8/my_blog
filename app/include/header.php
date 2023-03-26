@@ -3,14 +3,14 @@
             <div class="row">
                 <div class="col-4">
                     <h1>
-                        <a href="/">My blog</a>
+                        <a href=<?php echo BASE_URL ?>>My blog</a>
                     </h1>
                 </div>
                 <nav class="col-8">
                     <ul>
-                        <li><a href="#">Главная</a></li>
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">Услуги</a></li>
+                        <li><a href=<?php echo BASE_URL ?>>Главная</a></li>
+                        <li><a href=<?php echo BASE_URL . 'about.php'?>>О нас</a></li>
+                        <li><a href=<?php echo BASE_URL . 'services.php'?>>Услуги</a></li>
                         <li>
                             <a href="#">
                                 <i class="fa-solid fa-user"></i>
