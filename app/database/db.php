@@ -2,7 +2,7 @@
 
 require('connect.php');
 
-$sql = "SELECT * FROM myblog"
+$sql = "SELECT * FROM users"
 
 
 ?>
