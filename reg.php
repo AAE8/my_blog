@@ -1,5 +1,15 @@
-<?php include('path.php'); ?>
+<?php 
+include "path.php";
+include "app/controllers/users.php";
+?>
+<?php
+// Проверка
+// if(isset($_POST['login'])){
+//   var_dump($_POST);
+//   die();
+// }
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,25 +35,29 @@
 <div class="container reg_form">
 <form class="row justify-content-md-center"  method="post" action="reg.php">
     <h2>Форма регистрации</h2>
+    <div class="mb-3 col-md-4 col-12 err">
+        <p><?=$errMsg?></p>
+    </div>
+    <div class="w-100"></div>
     <div class="mb-3 col-md-4 col-12">
         <label for="formGroupExampleInput" class="form-label">Введите логин</label>
-        <input type="text" class="form-control" id="formGroupExampleInput">
+        <input name="login" value="<?=$login?>" type="text" class="form-control" id="formGroupExampleInput">
     </div>
     <div class="w-100"></div>
     <div class="mb-3 col-md-4 col-12">
       <label for="exampleInputEmail1" class="form-label">Введите email</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <input name="email" value="<?=$email?>" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
       <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
     </div>
     <div class="w-100"></div>
     <div class="mb-3 col-md-4 col-12">
       <label for="exampleInputPassword1" class="form-label">Введите пароль</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <input name="password1" type="password" class="form-control" id="exampleInputPassword1">
     </div>
     <div class="w-100"></div>
     <div class="mb-3 col-md-4 col-12">
         <label for="exampleInputPassword2" class="form-label">Повторите пароль</label>
-        <input type="password" class="form-control" id="exampleInputPassword2">
+        <input name="password2" type="password" class="form-control" id="exampleInputPassword2">
     </div>
     <div class="w-100"></div>
     <!-- <div class="mb-3 form-check">
@@ -51,7 +65,7 @@
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div> -->
     <div class="mb-3 col-md-4 col-12">
-        <button type="button" class="btn btn-secondary">Отправить</button>
+        <button name="button" type="submit" class="btn btn-secondary">Регистрация</button>
         <a href="log.php">Авторизоваться</a>
     </div>
 </form>
