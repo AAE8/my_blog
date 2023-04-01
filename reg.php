@@ -65,7 +65,7 @@ include "app/controllers/users.php";
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div> -->
     <div class="mb-3 col-md-4 col-12">
-        <button name="button" type="submit" class="btn btn-secondary">Регистрация</button>
+        <button name="button-reg" type="submit" class="btn btn-secondary">Регистрация</button>
         <a href="log.php">Авторизоваться</a>
     </div>
 </form>

@@ -4,11 +4,8 @@ include "app/database/db.php";
 // Обработчик урок 25
 // $isSubmit = false;
 $errMsg = '';
-// Код для формы регистрации
-if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])){
-    // tt($_POST);
-    // echo "Я пришел с формы регистрации";
-    // die();
+
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $admin = 0;
     $login = trim($_POST['login']);
     $email = trim($_POST['email']);
@@ -34,19 +31,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])){
             'password' => $password
             ];
             $id = insert('users', $post);
-            $user = selectOne('users', ['id' => $id]);
-
-            $_SESSION['id'] = $user['id'];
-            $_SESSION['login'] = $user['username'];
-            $_SESSION['admin'] = $user['admin'];
-
-            if($_SESSION['admin']){
-                header('location: ' . BASE_URL . admin/admin.php);
-            }else{
-                header('location: ' . BASE_URL);
-            }
-            // tt($_SESSION);
-            // exit();
+            $errMsg = "Пользователь " . "<strong>" . $login . "</strong>" . " успешно зарегистрирован!";
         // $isSubmit = true;
         // tt($post);
     // $last_row = selectOne('users', ['id' => $id]);
@@ -55,46 +40,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])){
 }else{
     $login = '';
     $email = '';
+    echo 'GET'; 
 }
 
-
-// Код для формы авторизации
-if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-log'])){
-    // tt($_POST);
-    // echo "Форма авторизации";
-    // exit();
-    $email = trim($_POST['email']);
-    $password = trim($_POST['password']);
-
-
-
-    if($email === '' || $password === ''){
-        $errMsg = "Не все поля заполнены!";
-    }else{
-        $existence = selectOne('users', ['email' => $email]);
-        // tt($existence);
-        // var_dump($existence);
-        if($existence && password_verify($password, $existence['password'])){
-            // Авторизовать
-            // echo 'Авторизовать';
-            // Нужно создать функцию loginuser($user), принимающую массив
-            $_SESSION['id'] = $existence['id'];
-            $_SESSION['login'] = $existence['username'];
-            $_SESSION['admin'] = $existence['admin'];
-
-            if($_SESSION['admin']){
-                header('location: ' . BASE_URL . admin/admin.php);
-            }else{
-                header('location: ' . BASE_URL);
-            }
-        }else{
-            // Ошибка авторизации
-            $errMsg = "Email, либо пароль введены неверно!";
-        }
-    }
-}else{
-    $email = '';
-}
 // if(isset($_POST['login'])){
     // var_dump($_POST);
     // die();

@@ -1,11 +1,14 @@
-<?php include('path.php'); ?>
+<?php 
+include "path.php";
+include "app/controllers/users.php";
+?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -25,14 +28,19 @@
 <div class="container reg_form">
 <form class="row justify-content-md-center"  method="post" action="log.php">
     <h2 class="col-12">Авторизация</h2>
+    <div class="mb-3 col-md-4 col-12 err">
+        <p><?=$errMsg?></p>
+    </div>
+    <div class="w-100"></div>
     <div class="mb-3 col-md-4 col-12">
-        <label for="formGroupExampleInput" class="form-label">Введите логин</label>
-        <input type="text" class="form-control" id="formGroupExampleInput">
+        <label for="formGroupExampleInput" class="form-label">Введите email</label>
+        <input name="email" value="<?=$email?>" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
     </div>
     <div class="w-100"></div>
     <div class="mb-3 col-md-4 col-12">
       <label for="exampleInputPassword1" class="form-label">Введите пароль</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <input name="password" type="password" class="form-control" id="exampleInputPassword1">
     </div>
     <div class="w-100"></div>
     <!-- <div class="mb-3 form-check">
@@ -40,7 +48,7 @@
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div> -->
     <div class="mb-3 col-md-4 col-12">
-        <button type="button" class="btn btn-secondary">Войти</button>
+        <button name="button-log" type="submit" class="btn btn-secondary">Войти</button>
         <a href="reg.php">Зарегистрироваться</a>
     </div>
 </form>
